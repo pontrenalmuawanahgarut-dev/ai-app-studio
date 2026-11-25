@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI App Studio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fb;color:#20283a}
+header{background:#17243c;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0}
+header span{color:#a9c5ff;font-size:13px}
+main{max-width:1100px;margin:35px auto;padding:0 20px}
+.welcome{background:linear-gradient(120deg,#243f72,#536fe0);color:white;padding:30px;border-radius:16px}
+.welcome h1{margin:0 0 10px}
+.welcome p{margin:0;color:#e0e8ff}
+.actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+button{border:0;border-radius:9px;padding:12px 17px;background:#4969db;color:white;cursor:pointer;font-weight:bold}
+button.light{background:white;color:#263b69}
+input{padding:12px;border:1px solid #d8deea;border-radius:9px;width:100%;margin:8px 0 12px}
+.section{margin-top:30px}
+.section h2{font-size:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:white;border:1px solid #e7eaf1;padding:20px;border-radius:13px}
+.card h3{margin-top:0}
+.muted{color:#778198;font-size:13px}
+.panel{background:white;padding:22px;border-radius:13px;margin-top:18px;border:1px solid #e7eaf1}
+.status{display:inline-block;background:#fff1d7;color:#8a5a00;padding:6px 10px;border-radius:20px;font-size:12px}
+footer{text-align:center;padding:30px;color:#8490a5;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h2>✦ AI APP STUDIO</h2>
+  <span>ONLINE WORKSPACE</span>
+</header>
+<main>
+  <section class="welcome">
+    <h1>Bangun Aplikasi dengan AI</h1>
+    <p>Sampaikan ide Anda. Kelola proyek dan kembangkan aplikasi dalam satu tempat.</p>
+    <div class="actions">
+      <button class="light" onclick="buatProyek()">+ Buat Proyek Baru</button>
+      <button onclick="alert('Ruang kerja AI akan diaktifkan pada tahap integrasi AI.')">Buka AI Developer</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Proyek Saya</h2>
+    <div class="cards" id="daftar">
+      <div class="card">
+        <h3>🧥 Toko Jaket Kulit</h3>
+        <p class="muted">Proyek toko online</p>
+        <span class="status">Contoh proyek</span>
+      </div>
+      <div class="card">
+        <h3>🏫 Administrasi Pesantren</h3>
+        <p class="muted">Proyek manajemen pesantren</p>
+        <span class="status">Contoh proyek</span>
+      </div>
+      <div class="card">
+        <h3>🌐 Website Al-Muawanah</h3>
+        <p class="muted">Proyek website pesantren</p>
+        <span class="status">Contoh proyek</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Perangkat Pengembangan</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🤖 AI Developer</h3>
+        <p class="muted">Asisten pembuat aplikasi melalui instruksi bahasa Indonesia.</p>
+        <span class="status">Menunggu integrasi AI</span>
+      </div>
+      <div class="card">
+        <h3>📱 Emulator Android</h3>
+        <p class="muted">Ruang pengujian aplikasi Android melalui browser.</p>
+        <span class="status">Menunggu integrasi cloud</span>
+      </div>
+      <div class="card">
+        <h3>☁️ Cloud Storage</h3>
+        <p class="muted">Penyimpanan proyek secara online.</p>
+        <span class="status">Tahap awal</span>
+      </div>
+    </div>
+  </section>
+  <div class="panel">
+    <b>Selamat datang di AI App Studio</b>
+    <p class="muted">Ini adalah tampilan awal. Fitur AI, penyimpanan cloud, editor kode, dan emulator akan dibangun pada tahap berikutnya.</p>
+  </div>
+</main>
+<footer>AI APP STUDIO · Online Application Development Platform</footer>
+<script>
+function buatProyek(){
+  const nama=prompt("Masukkan nama proyek baru:");
+  if(!nama || !nama.trim()) return;
+  const card=document.createElement("div");
+  card.className="card";
+  const judul=document.createElement("h3");
+  judul.textContent="📁 "+nama.trim();
+  const deskripsi=document.createElement("p");
+  deskripsi.className="muted";
+  deskripsi.textContent="Proyek baru";
+  const status=document.createElement("span");
+  status.className="status";
+  status.textContent="Prototipe";
+  card.append(judul,deskripsi,status);
+  document.getElementById("daftar").appendChild(card);
+}
+</script>
+</body>
+</html>
